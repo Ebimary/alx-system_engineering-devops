@@ -1,0 +1,2 @@
+#!/bin/bash
+mv /tep/betty tep/my_first_directory/betty
