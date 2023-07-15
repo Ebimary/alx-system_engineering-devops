@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-
 # Install Nginx
-apt-get update
+apt-get -y update
 apt-get install -y nginx
 
 # Set the custom HTTP response header in Nginx configuration
-sed -i '/^\s*http {/a \        server_tokens off;\n\n        location / {\n            add_header X-Served-By $hostname;\n        }' /etc/nginx/nginx.conf
+sed -i "24i\ \tadd_header X-Served-By $HOSTNAME;\n" /etc/nginx/sites-available/default
 
 # Restart Nginx to apply the changes
 
